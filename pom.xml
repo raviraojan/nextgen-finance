@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.12</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.main</groupId>
 	<artifactId>nextgenfinance</artifactId>
@@ -15,8 +15,8 @@
 	<description>nextgen fin project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
-    <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-</properties>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -28,43 +28,44 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
-	<pluginManagement>
+		<!-- <pluginManagement> -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <executable>ng</executable>
-          <!-- optional -->
-          <workingDirectory>src/main/resources/frontend/nextgen-finance</workingDirectory>
-          <arguments>
-            <argument>build</argument>
-          </arguments>
-        </configuration>
-      </plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>ng</executable>
+
+					<workingDirectory>src/main/resources/frontend/nextgen-finance</workingDirectory>
+					<arguments>
+						<argument>build</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+
 		</plugins>
-		</pluginManagement>
+		<!-- </pluginManagement> -->
 	</build>
 
 </project>

@@ -1,3 +1,18 @@
+
+TO RUN SPRINGBOOT AND ANGULAR PROJECT:
+
+GOTO MAIN PROJECT
+
+mvn package -Dmaven.test.skip=true
+
+AND NEXT ONCE BUILD IS COMPLETE GO TO TARGET FOLDER
+
+java -jar nextgenfinance-0.0.1-SNAPSHOT.jar
+
+
+
+ng add @ng-bootstrap/ng-bootstrap@14.0.0
+
 create steps:
 nextgen-finance
 
