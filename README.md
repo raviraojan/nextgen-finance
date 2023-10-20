@@ -37,6 +37,8 @@ UI EDITOR/WYSWYOU GET WHAT YOU SEE IS WHAT YOU GET.
 
 npm install --save ngx-summernote summernote jquery
 
+// this one will install summernote with bootstrap 4 and 5.
+
 
 summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></scr

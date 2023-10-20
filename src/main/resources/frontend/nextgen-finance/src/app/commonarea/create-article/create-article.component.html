@@ -1,0 +1,32 @@
+<h1>DaiDH</h1>
+<h3>
+  <a href="https://www.npmjs.com/package/ngx-summernote" target="_blank">ngx-summernote</a>
+</h3>
+<h3 style="color: #940e0e">npm install --save ngx-summernote summernote jquery</h3>
+
+<div>
+  <button (click)="enableEditor()" [disabled]="!editorDisabled">Enable</button>
+  <button (click)="disableEditor()" [disabled]="editorDisabled">Disable</button>
+</div>
+
+<div [formGroup]="form">
+  <div formControlName="html" 
+       [ngxSummernote]="config"
+       [ngxSummernoteDisabled]="editorDisabled"
+       (blur)="onBlur()"
+       (mediaDelete)="onDelete($event)"
+       (summernoteInit)="summernoteInit($event)">
+   </div>
+</div>
+
+<h3>HTML View</h3>
+<div [ngxSummernoteView]="f.html.value"></div>
+
+<h3>Code</h3>
+<pre>{{f.html.value}}</pre>
+<div *ngIf="f.html.invalid">
+{{f.html.errors | json}}
+</div>
+
+<h3>HTML safeHtml</h3>
+<div [innerHTML]="f.html.value | safeHtml"></div>
