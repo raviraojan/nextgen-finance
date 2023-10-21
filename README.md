@@ -3,6 +3,9 @@ TO RUN SPRINGBOOT AND ANGULAR PROJECT:
 
 GOTO MAIN PROJECT
 
+
+mvn package spring-boot:repackage -Dmaven.test.skip=true
+
 mvn package -Dmaven.test.skip=true
 
 AND NEXT ONCE BUILD IS COMPLETE GO TO TARGET FOLDER
