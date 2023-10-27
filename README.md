@@ -13,6 +13,11 @@ AND NEXT ONCE BUILD IS COMPLETE GO TO TARGET FOLDER
 java -jar nextgenfinance-0.0.1-SNAPSHOT.jar
 
 
+TO RUN LOCAL JSON SERVER IN 30 SECONDS
+
+GO TO FOLDER(ANY FOLDER AND PLACE db.json) and run
+
+json-server db.json
 
 ng add @ng-bootstrap/ng-bootstrap@14.0.0
 

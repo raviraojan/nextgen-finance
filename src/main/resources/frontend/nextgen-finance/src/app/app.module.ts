@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { NgxPopper } from 'angular-popper';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { NgxPopper } from 'angular-popper';
     CreateArticleComponent,
     ArticleDetailsComponent,
     ArticlesMainComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    HomeComponent
 
   ],
   imports: [
