@@ -1,7 +1,8 @@
 export interface Article {
-    id?: number;
-    title: string;
-    description: string;
-    imagePath: string;
-    videoUrl?:string;
+    id:number;
+    imagePath:string;
+     videoPath?:string;
+    shortDescription?:string;
+    description?:string;
+    title?:string;
 }

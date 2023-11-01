@@ -17,7 +17,7 @@ export class ArticlesMainComponent {
   constructor(private articleServe:ArticlesService)
   {
 
-    this.articleServe.getArticlesData().subscribe((data)=>{this.articlesList1=data});
+    this.articleServe.getArticlesData().subscribe((data)=>{this.articlesList1=data.content});
   }
   
 }

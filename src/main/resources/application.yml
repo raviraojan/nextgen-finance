@@ -1,2 +1,25 @@
-server:
-  port: 8081
+server.port: 8091
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        order_updates: true
+        batch_versioned_data: true
+        order_inserts: true
+  application:
+    name: nextgenfinance
+  datasource:
+    url: jdbc:mysql://localhost:3306/finarticles?autoReconnect=true&requireSSL=false&enabledTLSProtocols=TLSv1.2&zeroDateTimeBehavior=convertToNull&reWriteBatchedInserts=true&sessionVariables=innodb_lock_wait_timeout=1850
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 1800000
+      connection-timeout: 1200000
+      maximum-pool-size: 50
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5GB
+      max-request-size: 5GB

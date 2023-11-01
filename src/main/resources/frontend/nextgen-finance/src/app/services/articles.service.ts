@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../interfaces/article';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ArticlesService {
 
-  url = 'http://localhost:3000/articles';
+  url = 'http://localhost:8091/nextgenfin/api/articles';
 
   constructor(public httpClient: HttpClient) { }
 
@@ -28,8 +28,12 @@ export class ArticlesService {
           });
   }
 
-  public getArticlesData():Observable<Article[]> {
-   return this.httpClient.get<Article[]>(this.url);
+  public getArticlesData():Observable<any> {
+
+    let headers = new HttpHeaders().set('Content-Type', "application/json"); // create header object
+
+
+   return this.httpClient.get<Article[]>(this.url,{headers});
   }
 
 }
