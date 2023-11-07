@@ -29,6 +29,7 @@ import com.main.article.dto.ArticleRequestDTO;
 import com.main.article.dto.ArticleResponseDTO;
 import com.main.article.models.Article;
 import com.main.article.repositories.FinArticlesRepository;
+import com.main.article.services.FinArticleService;
 
 import javax.validation.Valid;
 
@@ -47,25 +48,25 @@ import lombok.extern.slf4j.Slf4j;
 public class FinArticlesController {
 
 	@Autowired
-	private FinArticlesRepository finArticlesRepository;
-
+	private final FinArticlesRepository finArticlesRepository;
 	
-	@GetMapping(path="/articles", consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+	private final FinArticleService finArticleService;
+
+	@GetMapping(path = "/articles", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<Article> getAllArticles(
-			@PageableDefault(size = 12) @SortDefault(sort = "creationDate", direction = Sort.Direction.ASC) Pageable pageable) 
-	{
+			@PageableDefault(size = 12) @SortDefault(sort = "creationDate", direction = Sort.Direction.ASC) Pageable pageable) {
 
-		if(finArticlesRepository!=null)
-		{
-			System.out.println("not null");
-		}
-		 Page<Article> findAll = finArticlesRepository.findAll(pageable);
-		 Article article1 = findAll.getContent().get(0);
-		System.out.println(""+article1);
-		 System.out.println(""+article1);
-		 System.out.println("");
-		 
-
-		 return findAll;
+		return finArticleService.getAllArticles(pageable);
 	}
+
+	@PostMapping(path = "/sub/article", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Article submitArticle(@RequestBody ArticleRequestDTO articleRequest) {
+		
+		System.out.println(" getArticletitle " + articleRequest.getArticletitle());
+		System.out.println("getHtml " + articleRequest.getHtml());
+		System.out.println("");
+
+		return finArticleService.submitArticle(articleRequest);
+	}
+
 }

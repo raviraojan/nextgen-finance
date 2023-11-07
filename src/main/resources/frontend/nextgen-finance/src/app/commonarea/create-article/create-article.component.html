@@ -1,32 +1,37 @@
-<h1>DaiDH</h1>
-<h3>
-  <a href="https://www.npmjs.com/package/ngx-summernote" target="_blank">ngx-summernote</a>
-</h3>
-<h3 style="color: #940e0e">npm install --save ngx-summernote summernote jquery</h3>
+<div class="container">
 
-<div>
-  <button (click)="enableEditor()" [disabled]="!editorDisabled">Enable</button>
-  <button (click)="disableEditor()" [disabled]="editorDisabled">Disable</button>
+  <form [formGroup]="articleForm" (ngSubmit)="handleSubmit()" novalidate>
+
+    <div class="row pt-2 pb-1">
+      <div class="col">
+        <div class="mb-3 font-weight-bold">
+          <label for="exampleInputEmail1" class="form-label">
+            <h4>Article Title</h4>
+          </label>
+          <input type="text" class="form-control" id="articletitle" name="articletitle" formControlName="articletitle" [class.is-invalid]="articletitle!.invalid && (articletitle!.dirty || articletitle!.touched)">
+          <div *ngIf="articletitle!.invalid && (articletitle!.dirty || articletitle!.touched)" class="invalid-feedback">
+            <h6> Please add title to your article.</h6>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row pt-2 pb-1">
+      <div class="col">
+        <div>
+          <div formControlName="html" [ngxSummernote]="config" [ngxSummernoteDisabled]="editorDisabled"
+            (blur)="onBlur()" (mediaDelete)="onDelete($event)" (summernoteInit)="summernoteInit($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row pt-2 pb-4 justify-content-end">
+      <div class="col-6">
+        <button type="submit" class="btn btn-primary">Publish</button>
+      </div>
+
+    </div>
+
+  </form>
 </div>
-
-<div [formGroup]="form">
-  <div formControlName="html" 
-       [ngxSummernote]="config"
-       [ngxSummernoteDisabled]="editorDisabled"
-       (blur)="onBlur()"
-       (mediaDelete)="onDelete($event)"
-       (summernoteInit)="summernoteInit($event)">
-   </div>
-</div>
-
-<h3>HTML View</h3>
-<div [ngxSummernoteView]="f.html.value"></div>
-
-<h3>Code</h3>
-<pre>{{f.html.value}}</pre>
-<div *ngIf="f.html.invalid">
-{{f.html.errors | json}}
-</div>
-
-<h3>HTML safeHtml</h3>
-<div [innerHTML]="f.html.value | safeHtml"></div>
