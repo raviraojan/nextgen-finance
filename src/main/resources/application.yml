@@ -23,3 +23,13 @@ spring:
       enabled: true
       max-file-size: 5GB
       max-request-size: 5GB
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:mysql://54.87.143.13:3306/finarticles?serverTimezone=America/New_York&autoReconnect=true&requireSSL=false&enabledTLSProtocols=TLSv1.2&zeroDateTimeBehavior=convertToNull
+    username: test1
+    password: testpass

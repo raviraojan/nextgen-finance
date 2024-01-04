@@ -3,6 +3,8 @@
  */
 package com.main.article.services;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -49,6 +51,14 @@ public class FinArticleService {
 		article.setDescription(artReqDTO.getHtml());
 		
 		return finArticlesRepository.save(article);
+	}
+	
+	public Article findArticleDetails(Long id)
+	{
+	
+		 return finArticlesRepository.findById(id)
+	                .orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
+
 	}
 	
 	

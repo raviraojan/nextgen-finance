@@ -69,4 +69,11 @@ public class FinArticlesController {
 		return finArticleService.submitArticle(articleRequest);
 	}
 
+	@GetMapping(path = "/articleDetails", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Article getArticleDetails(
+			@RequestParam Long id) {
+ System.out.println("iddddddddddd" + id);
+		return finArticleService.findArticleDetails(id);
+	}
+	
 }

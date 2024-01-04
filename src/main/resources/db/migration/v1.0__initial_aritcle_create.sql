@@ -1,3 +1,4 @@
+CREATE DATABASE finarticles;
 use finarticles;
 CREATE TABLE fin_articles (
   `id` bigint NOT NULL AUTO_INCREMENT,
