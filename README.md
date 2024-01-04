@@ -3,10 +3,14 @@ TO RUN SPRINGBOOT AND ANGULAR PROJECT:
 
 GOTO MAIN PROJECT
 
+First build frontend :
+
+npm i && npm run build
+
+next build backend along with frontend
 
 mvn package spring-boot:repackage -Dmaven.test.skip=true
 
-mvn package -Dmaven.test.skip=true
 
 AND NEXT ONCE BUILD IS COMPLETE GO TO TARGET FOLDER
 
