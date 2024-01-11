@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { NgxPopper } from 'angular-popper';
 import { HomeComponent } from './home/home.component';
+import { MainPaginationComponent } from './commonarea/main-pagination/main-pagination.component';
+import { ValueArryPipePipe } from './services/value-arry-pipe.pipe';
 
 
 
@@ -27,8 +29,9 @@ import { HomeComponent } from './home/home.component';
     ArticleDetailsComponent,
     ArticlesMainComponent,
     SafeHtmlPipe,
-    HomeComponent
-
+    HomeComponent,
+    MainPaginationComponent,
+    ValueArryPipePipe
   ],
   imports: [
     BrowserModule,

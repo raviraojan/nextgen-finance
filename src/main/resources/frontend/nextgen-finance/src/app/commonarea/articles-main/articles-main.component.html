@@ -1,41 +1,25 @@
 <div class="container">
-    <div class="row pt-4 pb-4">
-      <div *ngFor="let article of articlesList1" class="col-md-4">
 
-        <!--<div *ngFor="let foo of foobars" class="col-6">{{foo}}</div> -->
+  <div class="row pt-4 pb-4">
+    <div *ngFor="let article of articlesList1" class="col-md-4">
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-truncate">{{article.title}}
-            </h5>
-            <p class="card-text text-truncate">{{article.description}}.</p>
-                <a [routerLink]="['/details', article.id]" class="btn btn-primary">Learn More</a>
-          </div>
+      <!--<div *ngFor="let foo of foobars" class="col-6">{{foo}}</div> -->
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-truncate">{{article.title}}
+          </h5>
+          <p class="card-text text-truncate">{{article.description}}.</p>
+          <a [routerLink]="['/details', article.id]" class="btn btn-primary">Learn More</a>
         </div>
       </div>
+    </div>
 
-    </div> <!-- end first main row -->
+  </div> <!-- end first main row -->
 
-    <div class="row pt-4 pb-4">
+  <div class="row pt-4 pb-4" *ngIf="parentData!=null || undefined">
+    <app-main-pagination [inputFromParent]="parentData"></app-main-pagination>
+  </div>
 
-      <nav aria-label="...">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <span class="page-link">Previous</span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active">
-            <span class="page-link">
-              2
-              <span class="sr-only">(current)</span>
-            </span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-      </div>
 
-    </div>    
+</div>

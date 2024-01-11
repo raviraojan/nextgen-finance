@@ -12,6 +12,11 @@ const routes: Routes = [
     title: 'Article main'
   },
   {
+    path: ':id',
+    component: ArticlesMainComponent,
+    title: 'Article main'
+  },
+  {
     path: 'details',
     component: ArticleDetailsComponent,
     title: 'Article Details'

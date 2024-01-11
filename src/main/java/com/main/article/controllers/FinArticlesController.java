@@ -54,7 +54,7 @@ public class FinArticlesController {
 
 	@GetMapping(path = "/articles", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<Article> getAllArticles(
-			@PageableDefault(size = 12) @SortDefault(sort = "creationDate", direction = Sort.Direction.ASC) Pageable pageable) {
+			@PageableDefault(size = 2) @SortDefault(sort = "creationDate", direction = Sort.Direction.ASC) Pageable pageable) {
 
 		return finArticleService.getAllArticles(pageable);
 	}

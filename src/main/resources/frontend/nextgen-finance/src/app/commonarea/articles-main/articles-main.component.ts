@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { ArticlesService } from 'src/app/services/articles.service';
 
@@ -9,15 +10,29 @@ import { ArticlesService } from 'src/app/services/articles.service';
 })
 export class ArticlesMainComponent {
 
-  foobars = ['a', 'b', 'c', 'd', 'e','f','g'];
+pageContent:any;
 
+pageNumber:string="0";
 
   articlesList1: Article[] = [];  
+
+  parentData:any;
+  route: ActivatedRoute = inject(ActivatedRoute);
 
   constructor(private articleServe:ArticlesService)
   {
 
-    this.articleServe.getArticlesData().subscribe((data)=>{this.articlesList1=data.content});
+    if(this.route.snapshot.params['id'] != (undefined || null))
+    {
+      this.pageNumber=this.route.snapshot.params['id'];
+    }
+    
+    this.articleServe.getArticlesData(this.pageNumber).subscribe((data)=>{
+      this.articlesList1=data.content;
+      this.pageContent = this.articlesList1;
+        this.parentData = data;
+
+    });
   }
   
 }
