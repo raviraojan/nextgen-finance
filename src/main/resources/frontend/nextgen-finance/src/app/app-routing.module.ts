@@ -5,7 +5,11 @@ import { ArticleDetailsComponent } from './commonarea/article-details/article-de
 import { CreateArticleComponent } from './commonarea/create-article/create-article.component';
 
 const routes: Routes = [
-
+  {
+    path: 'create',
+    component: CreateArticleComponent,
+    title: 'Article Create'
+  },
   {
     path: '',
     component: ArticlesMainComponent,
@@ -25,11 +29,6 @@ const routes: Routes = [
     path: 'details/:id',
     component: ArticleDetailsComponent,
     title: 'article details'
-  },
-  {
-    path: 'create',
-    component: CreateArticleComponent,
-    title: 'Article Create'
   }
 
 ];

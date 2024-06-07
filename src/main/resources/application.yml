@@ -1,5 +1,11 @@
 server.port: 8091
 
+amazonProperties:
+  endpointUrl: https://xyinvestingimages.s3.amazonaws.com
+  accessKey: AKIARFZFCZZ6RB6DXQ7H
+  secretKey: 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
+  bucketName: xyinvestingimages
+
 spring:
   jpa:
     properties:

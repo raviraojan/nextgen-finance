@@ -17,7 +17,7 @@
 
   </div> <!-- end first main row -->
 
-  <div class="row pt-4 pb-4" *ngIf="parentData!=null || undefined">
+  <div class="row pt-4 pb-4" *ngIf="isDataPresent(parentData)">
     <app-main-pagination [inputFromParent]="parentData"></app-main-pagination>
   </div>
 

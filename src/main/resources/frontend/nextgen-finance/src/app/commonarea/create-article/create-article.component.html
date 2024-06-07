@@ -1,4 +1,4 @@
-<div class="container">
+  <div class="container">
 
   <form [formGroup]="articleForm" (ngSubmit)="handleSubmit()" novalidate>
 
@@ -19,9 +19,14 @@
     <div class="row pt-2 pb-1">
       <div class="col">
         <div>
-          <div formControlName="html" [ngxSummernote]="config" [ngxSummernoteDisabled]="editorDisabled"
-            (blur)="onBlur()" (mediaDelete)="onDelete($event)" (summernoteInit)="summernoteInit($event)">
+          <div formControlName="html" [ngxSummernote]="config" 
+            (blur)="onBlur()"  (mediaDelete)="onDelete($event)" (summernoteInit)="summernoteInit($event)">
           </div>
+
+          <!-- <div formControlName="html" [ngxSummernote]="config" [ngxSummernoteDisabled]="editorDisabled"
+            (blur)="onBlur()"  (mediaDelete)="onDelete($event)" (summernoteInit)="summernoteInit($event)">
+          </div> -->
+
         </div>
       </div>
     </div>
@@ -34,4 +39,11 @@
     </div>
 
   </form>
+</div>
+<div>
+
+  view text:
+
+  <!-- <div [ngxSummernoteView]="content"></div> -->
+
 </div>

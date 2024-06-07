@@ -35,7 +35,7 @@ export class ArticlesService {
       });
   }
 
-  public getArticlesData(pageNumber:string): Observable<any> {
+  public getArticlesData(pageNumber:number): Observable<any> {
 
     let headers = new HttpHeaders().set('Content-Type', "application/json"); // create header object
     console.log("received from UI"+pageNumber);

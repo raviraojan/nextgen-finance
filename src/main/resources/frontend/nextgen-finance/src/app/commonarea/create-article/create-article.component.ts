@@ -16,6 +16,8 @@ declare var $:any;
   })
 export class CreateArticleComponent implements OnInit {
 
+
+
   article:Articleform;
 
   articleServe:ArticlesService;
@@ -94,7 +96,7 @@ console.log(" article after reset :: "+this.articleForm.value);
       ]
     },
     height: '200px',
-    uploadImagePath: '/api/upload',
+    uploadImagePath: 'http://localhost:8091/nextgenfin/api',
     toolbar: [
       ['misc', ['codeview', 'undo', 'redo']],
       [
@@ -151,12 +153,22 @@ console.log(" article after reset :: "+this.articleForm.value);
   }
 
   public onDelete(file:any) {
-    console.log('Delete file', file.url);
+    console.log('Deccccccccccclete file', file.url);
   }
 
   public summernoteInit(event:any) {
     console.log(event);
   }
+  selectedFile!: File;
+
+  sendFile(file:any) {
+
+    
+    this.selectedFile = file;
+    console.log("entered sendfile methoddd ");
+    console.log('uploadddddddddddd file', file.url);
+    }
+  
 }
 
 

@@ -10,29 +10,40 @@ import { ArticlesService } from 'src/app/services/articles.service';
 })
 export class ArticlesMainComponent {
 
-pageContent:any;
+  dataPresent: boolean = false;
 
-pageNumber:string="0";
+  isDataPresent(parentData: any): boolean {
 
-  articlesList1: Article[] = [];  
 
-  parentData:any;
+    if (parentData != (null || undefined) && (parentData.pageable != null && parentData.content.length > 0)) {
+      this.dataPresent = true;
+    }
+
+    return this.dataPresent;
+
+  }
+
+  pageContent: any;
+
+  pageNumber: number = 0;
+
+  articlesList1: Article[] = [];
+
+  parentData: any;
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private articleServe:ArticlesService)
-  {
+  constructor(private articleServe: ArticlesService) {
 
-    if(this.route.snapshot.params['id'] != (undefined || null))
-    {
-      this.pageNumber=this.route.snapshot.params['id'];
+    if (this.route.snapshot.params['id'] != (undefined || null)) {
+      this.pageNumber = this.route.snapshot.params['id'];
     }
-    
-    this.articleServe.getArticlesData(this.pageNumber).subscribe((data)=>{
-      this.articlesList1=data.content;
+//always subtract 1 from page number, because backend pages starts from 0
+    this.articleServe.getArticlesData(this.pageNumber-1).subscribe((data) => {
+      this.articlesList1 = data.content;
       this.pageContent = this.articlesList1;
-        this.parentData = data;
+      this.parentData = data;
 
     });
   }
-  
+
 }
