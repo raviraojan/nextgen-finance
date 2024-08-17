@@ -5,6 +5,8 @@ GOTO MAIN PROJECT
 
 First build frontend :
 
+cd: C:\CODE\SPRING_BOOT\nextgen-finance\src\main\resources\frontend\nextgen-finance
+
 npm i && npm run build
 
 next build backend along with frontend
