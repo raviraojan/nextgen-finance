@@ -9,7 +9,7 @@
         <div class="card-body">
           <h5 class="card-title text-truncate">{{article.title}}
           </h5>
-          <p class="card-text text-truncate">{{article.description}}.</p>
+          <p class="card-text text-truncate" [innerHTML]=''>{{article.description}}</p>
           <a [routerLink]="['/details', article.id]" class="btn btn-primary">Learn More</a>
         </div>
       </div>

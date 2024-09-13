@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.main.article.controllers;
 
@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.main.article.repositories.FinArticlesRepository;
 import com.main.article.services.AmazonClientService;
-import com.main.article.services.FinArticleService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 @EnableAsync
 public class FinArticlesImageStorController {
-	
+
     private AmazonClientService amazonClient;
 
     @Autowired
@@ -46,6 +44,6 @@ public class FinArticlesImageStorController {
     public String deleteFile(@RequestPart(value = "url") String fileUrl) {
         return this.amazonClient.deleteFileFromS3Bucket(fileUrl);
     }
-	
+
 
 }

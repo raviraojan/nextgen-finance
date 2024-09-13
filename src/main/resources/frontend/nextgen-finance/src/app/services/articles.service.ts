@@ -3,17 +3,21 @@ import { Article } from '../interfaces/article';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Articleform } from '../interfaces/articleform';
+import {BASE_HREF} from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
+	
+	// baseURL = 'http://localhost:8080';
+	 baseURL = '';
 
-  url = 'http://localhost:8091/nextgenfin/api/articles';
+  url = `${this.baseURL}/nextgenfin/api/articles`;
 
-  posturl = 'http://localhost:8091/nextgenfin/api/sub/article';
+  posturl = `${this.baseURL}/nextgenfin/api/sub/article`;
 
-  urlgetDetails = 'http://localhost:8091/nextgenfin/api/articleDetails';
+  urlgetDetails = `${this.baseURL}/nextgenfin/api/articleDetails`;
 
 
   constructor(public httpClient: HttpClient) { }
