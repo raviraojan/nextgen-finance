@@ -3,6 +3,9 @@
  */
 package com.main.article.models;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,11 +20,11 @@ import lombok.NoArgsConstructor;
  *
  */
 
-@Entity(name = "fin_articles")
+@Entity(name = "news_channels")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Article extends Auditable<String> {
+public class ChannelNews extends Auditable<String> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +34,7 @@ public class Article extends Auditable<String> {
 	private String shortDescription;
 	private String description;
 	private String title;
-
+	private String source;
+	private LocalDateTime publishDate;
+	private String newsUrl;
 }

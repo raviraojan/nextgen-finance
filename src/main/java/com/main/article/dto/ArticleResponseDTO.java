@@ -8,7 +8,7 @@ import lombok.Data;
 public class ArticleResponseDTO {
 
 List<ArticleDTO> articlesList;
-  
-	
+
+
 }
 

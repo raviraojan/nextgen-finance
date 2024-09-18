@@ -65,8 +65,10 @@
 		</dependency>
 
 		<!-- lombok dependency start -->
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+		<!--
+		https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+		<!--
+		https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok-maven-plugin</artifactId>
@@ -85,6 +87,61 @@
 
 		<!-- modal mapper end -->
 
+		<!-- shedlock for scheduler locks start-->
+		<!--
+		https://mvnrepository.com/artifact/net.javacrumbs.shedlock/shedlock-spring -->
+		<dependency>
+			<groupId>net.javacrumbs.shedlock</groupId>
+			<artifactId>shedlock-spring</artifactId>
+			<version>5.16.0</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/net.javacrumbs.shedlock/shedlock-provider-jdbc-template -->
+		<dependency>
+			<groupId>net.javacrumbs.shedlock</groupId>
+			<artifactId>shedlock-provider-jdbc-template</artifactId>
+			<version>5.16.0</version>
+		</dependency>
+
+
+		<!-- shedlock for scheduler locks End-->
+		
+		        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        
+        <!-- ROME for RSS feed start-->
+        
+        	<dependency>			
+	    <groupId>rome</groupId>			
+	    <artifactId>rome</artifactId>			
+	    <version>1.0</version>
+	</dependency>
+	
+<!-- https://mvnrepository.com/artifact/com.rometools/rome -->
+<dependency>
+    <groupId>com.rometools</groupId>
+    <artifactId>rome</artifactId>
+    <version>2.1.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.rometools/rome-modules -->
+<dependency>
+    <groupId>com.rometools</groupId>
+    <artifactId>rome-modules</artifactId>
+    <version>2.1.0</version>
+</dependency>
+        
+        <!-- Rome for RSS Fedd End-->
 
 	</dependencies>
 
@@ -121,7 +178,8 @@
 					<configuration>
 						<executable>ng</executable>
 
-						<workingDirectory>src/main/resources/frontend/nextgen-finance</workingDirectory>
+						<workingDirectory>
+							src/main/resources/frontend/nextgen-finance</workingDirectory>
 						<arguments>
 							<argument>build</argument>
 						</arguments>

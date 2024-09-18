@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 public class ArticleRequestDTO {
-	
+
 	@JsonProperty
 	private String articletitle;
 	@JsonProperty
 	private String html;
-	
+
 }
 

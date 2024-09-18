@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.main.article.controllers;
 
@@ -11,7 +11,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -20,7 +19,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,13 +28,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.main.article.dto.ArticleRequestDTO;
-import com.main.article.dto.ArticleResponseDTO;
 import com.main.article.dto.ImagePathResponse;
 import com.main.article.models.Article;
 import com.main.article.repositories.FinArticlesRepository;
 import com.main.article.services.FinArticleService;
-
-import javax.validation.Valid;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -52,9 +47,6 @@ import lombok.extern.slf4j.Slf4j;
 @EnableAsync
 public class FinArticlesController {
 
-	@Autowired
-	private final FinArticlesRepository finArticlesRepository;
-
 	private final FinArticleService finArticleService;
 
 	@GetMapping(path = "/articles", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -68,7 +60,7 @@ public class FinArticlesController {
 	@PostMapping(path = "/api/upload")
 	public ResponseEntity<ImagePathResponse> uploadImages(@RequestParam("image") MultipartFile image) {
 
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new HashMap<>();
 		map.put("path", "http://localhost:8091/image.jpg");
 
 		System.out.println("upload imagessssssssssss ");
@@ -82,10 +74,10 @@ public class FinArticlesController {
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> uploadImage(@RequestParam("image") MultipartFile file) throws IOException {
 		// String uploadImage = imageService.uploadImage(file);
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("path", "http://localhost:4200/assets/images/Test_img.png");
 
-		List<String> remotepaths = new ArrayList<String>();
+		List<String> remotepaths = new ArrayList<>();
 
 		remotepaths.add("http://localhost:4200/assets/images/Test_img.png");
 		// map.put("remotePaths", remotepaths);
