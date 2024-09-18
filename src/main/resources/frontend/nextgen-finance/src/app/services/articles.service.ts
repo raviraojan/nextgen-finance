@@ -10,12 +10,14 @@ import {BASE_HREF} from '../constants';
 })
 export class ArticlesService {
 	
-	// baseURL = 'http://localhost:8080';
-	 baseURL = '';
+	baseURL = 'http://localhost:8080';
+	 //baseURL = '';
 
   url = `${this.baseURL}/nextgenfin/api/articles`;
 
   posturl = `${this.baseURL}/nextgenfin/api/sub/article`;
+
+  newsChannelsAPI = `${this.baseURL}/nextgenfin/api/allChannelNews`;
 
   urlgetDetails = `${this.baseURL}/nextgenfin/api/articleDetails`;
 
@@ -47,6 +49,16 @@ export class ArticlesService {
     params = params.append('page', pageNumber);
 
     return this.httpClient.get(this.url, { headers,params });
+  }
+
+  public getChannelNews(pageNumber:number): Observable<any> {
+
+    let headers = new HttpHeaders().set('Content-Type', "application/json"); // create header object
+    console.log("received from UI"+pageNumber);
+    let params = new HttpParams();
+    params = params.append('page', pageNumber);
+
+    return this.httpClient.get(this.newsChannelsAPI, { headers,params });
   }
 
   public postArticleData(articleform: Articleform): Observable<any> {

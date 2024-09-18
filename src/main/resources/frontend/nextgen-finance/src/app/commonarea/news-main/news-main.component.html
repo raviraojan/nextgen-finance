@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="row pt-4 pb-4">
+      <div *ngFor="let article of newsFeed" class="col-md-4">
+  
+        <!--<div *ngFor="let foo of foobars" class="col-6">{{foo}}</div> -->
+  
+        <div class="card">
+            <img class="card-img-top" *ngif="article?.image" src="{{article.imagePath}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{article.title}}
+            </h5>
+            <p class="card-text">{{article.description}}</p>
+            <a href="{{article.newsUrl}}" target="_blank" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+  
+    </div> <!-- end first main row -->
+  
+    <div class="row pt-4 pb-4" *ngIf="isDataPresent(parentData)">
+      <app-main-pagination [inputFromParent]="parentData"></app-main-pagination>
+    </div>
+  
+  
+  </div>

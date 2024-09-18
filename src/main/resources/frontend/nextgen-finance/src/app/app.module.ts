@@ -17,6 +17,9 @@ import { NgxPopper } from 'angular-popper';
 import { HomeComponent } from './home/home.component';
 import { MainPaginationComponent } from './commonarea/main-pagination/main-pagination.component';
 import { ValueArryPipePipe } from './services/value-arry-pipe.pipe';
+import { NewsMainComponent } from './commonarea/news-main/news-main.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteNewsComponent } from './commonarea/infinite-news/infinite-news.component';
 
 
 
@@ -31,10 +34,13 @@ import { ValueArryPipePipe } from './services/value-arry-pipe.pipe';
     SafeHtmlPipe,
     HomeComponent,
     MainPaginationComponent,
-    ValueArryPipePipe
+    ValueArryPipePipe,
+    NewsMainComponent,
+    InfiniteNewsComponent
   ],
   imports: [
     BrowserModule,
+    InfiniteScrollModule,
     AppRoutingModule,
     NgbModule,
     NgxSummernoteModule,

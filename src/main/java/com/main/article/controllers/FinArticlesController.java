@@ -47,9 +47,6 @@ import lombok.extern.slf4j.Slf4j;
 @EnableAsync
 public class FinArticlesController {
 
-	@Autowired
-	private final FinArticlesRepository finArticlesRepository;
-
 	private final FinArticleService finArticleService;
 
 	@GetMapping(path = "/articles", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
