@@ -20,6 +20,7 @@ import { ValueArryPipePipe } from './services/value-arry-pipe.pipe';
 import { NewsMainComponent } from './commonarea/news-main/news-main.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { InfiniteNewsComponent } from './commonarea/infinite-news/infinite-news.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 
@@ -36,7 +37,8 @@ import { InfiniteNewsComponent } from './commonarea/infinite-news/infinite-news.
     MainPaginationComponent,
     ValueArryPipePipe,
     NewsMainComponent,
-    InfiniteNewsComponent
+    InfiniteNewsComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
