@@ -1,0 +1,54 @@
+
+<!-- Start-->
+
+<div class="container">
+
+    <div
+    class="row pt-4 pb-4"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    (scrolled)="onScroll()"
+    [scrollWindow]="true"
+  >
+
+  <div class="row">
+    <div class="col-sm-8" *ngFor="let item of newsFeed">
+
+        <div class="card">
+
+            <!-- <h6 class="card-title m-2">{{item.timeElpased}} by {{item.source}}</h6> -->
+              <!-- <img class="card-img-top" *ngIf="item.imagePath" src="{{item.imagePath}}" alt="Card image cap"> -->
+            
+              <div class="card-body">
+              <h5 class="card-title">{{item.title}}
+              </h5>
+              <p class="card-text">{{item.description}}</p>
+              <a href="{{item.newsUrl}}" target="_blank" class="btn btn-primary">SEC Link</a>(U.S. Securities and Exchange Commission)
+            </div>
+          </div>
+
+    </div>
+
+  </div>
+
+  <!-- <div class="col-12 data-card" *ngFor="let item of newsFeed">
+    <div class="card">
+
+      <h6 class="card-title">{{item.timeElpased}} by {{item.source}}</h6>
+        <img class="card-img-top" *ngIf="item.imagePath" src="{{item.imagePath}}" alt="Card image cap">
+      
+        <div class="card-body">
+        <h5 class="card-title">{{item.title}}
+        </h5>
+        <p class="card-text">{{item.description}}</p>
+        <a href="{{item.newsUrl}}" target="_blank" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+</div> -->
+
+
+<div *ngIf="isLoading">Loading...</div>
+</div>
+
+

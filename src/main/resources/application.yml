@@ -16,9 +16,9 @@ spring:
   application:
     name: nextgenfinance
   datasource:
-    url: jdbc:mysql://localhost:3306/finarticles?autoReconnect=true&requireSSL=false&enabledTLSProtocols=TLSv1.2&zeroDateTimeBehavior=convertToNull&reWriteBatchedInserts=true&sessionVariables=innodb_lock_wait_timeout=1850
-    username: root
-    password: root
+    url: jdbc:mysql://3.86.99.207:3306/finarticles?autoReconnect=true&requireSSL=false&enabledTLSProtocols=TLSv1.2&zeroDateTimeBehavior=convertToNull&reWriteBatchedInserts=true&sessionVariables=innodb_lock_wait_timeout=1850
+    username: xyinvensting1224
+    password: Kishore1224@44
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       max-lifetime: 1800000

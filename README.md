@@ -1,4 +1,15 @@
+Updated on Sept 20 -2024,
 
+
+
+Just run mvn install, 
+next go to target folder and run, \n
+java -jar nextgenfinance-0.0.1-SNAPSHOT.jar
+
+Note: frontend and backend both will build with mvn install command, as frontend build plugin is included.
+
+
+Old:
 TO RUN SPRINGBOOT AND ANGULAR PROJECT:
 
 GOTO MAIN PROJECT
